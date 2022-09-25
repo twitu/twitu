@@ -1,6 +1,6 @@
 ## My simple web page 😇
 
-🧑‍🎓 I'm **working on [MLscript language](https://github.com/hkust-taco/mlscript/)** at the [TACO research group](https://www.cse.ust.hk/~parreaux/). The language implements a sophisticated type system that infers the most general type, the principal type, for an expression.
+🧑‍🎓 I'm **working on the [MLscript language](https://github.com/hkust-taco/mlscript/)** at the [TACO research group](https://www.cse.ust.hk/~parreaux/). It implements a sophisticated type system that infers the most general type, the principal type, for an expression.
 
 💻 I enjoy topics related **compilers, type systems and programming languages** implementation. On the side I contribute to open source projects in Haskell or Rust 🦀.
 

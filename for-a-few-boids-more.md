@@ -182,7 +182,7 @@ We create a list of boids and cones each. Inside the game loop we update the obj
 
 Finally `cargo run`, shows this cool animation of rockets firing in all directions.
 
-![](./img/boid-2-2.gif)
+![](./img/boids-in-rust/boid-2-2.gif)
 
 > Firing rockets
 

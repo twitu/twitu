@@ -99,7 +99,7 @@ The module system for Rust is fairly complex. Right now, all we're doing is impo
 
 Open a terminal inside `rboids` folder and execute `cargo run`. It might take some time because it is building the project for the first time. The following screen will pop up when compiling is done.
 
-![a sphere at origin](./img/boids-in-rust/boid-1-1.png)
+![a sphere at origin](./img/boids-in-rust/boid-1-7.png)
 
 > A sphere at origin
 
@@ -431,10 +431,10 @@ All criticism and questions are welcome, file an issue at the [repo](https://git
 
 ## References
 
-1.  [https://github.com/three-rs/three/](https://web.archive.org/web/20200926221449/https://github.com/three-rs/three/)
-2.  [https://www.ncollide.org/rustdoc/ncollide3d/](https://web.archive.org/web/20200926221449/https://www.ncollide.org/rustdoc/ncollide3d/)
-3.  [Understanding perspective projection](https://web.archive.org/web/20200926221449/https://www.mathematik.uni-marburg.de/~thormae/lectures/graphics1/graphics_6_1_eng_web.html#1)
-4.  [Original paper introducing boids](https://web.archive.org/web/20200926221449/http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/)
-5.  [3b1b explains Quaternions](https://web.archive.org/web/20200926221449/https://youtu.be/d4EgbgTm0Bg)
+1.  [https://github.com/three-rs/three/](https://github.com/three-rs/three/)
+2.  [https://www.ncollide.org/rustdoc/ncollide3d/](https://www.ncollide.org/rustdoc/ncollide3d/)
+3.  [Understanding perspective projection](https://www.mathematik.uni-marburg.de/~thormae/lectures/graphics1/graphics_6_1_eng_web.html#1)
+4.  [Original paper introducing boids](http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/)
+5.  [3b1b explains Quaternions](https://youtu.be/d4EgbgTm0Bg)
 
 _Originally posted for the BITS ACM blog in May, 20_
