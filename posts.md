@@ -1,5 +1,7 @@
 ## All posts (newest first)
 
+* [Over engineering assignment checking](./over-engineering-assignment-checking.md) automates the chore of checking a python assignment that doesn't have a well defined spec. It explores aspects of python for running external python code - including library mocking and multi-processing.
+
 * [AWS DevOps Blog](https://aws.amazon.com/blogs/devops/integrating-with-aarogya-setu-open-api-on-aws-to-ensure-a-safe-workspace/) about building and deploying a serverless application that integrates with Aarogya Setu. - Apr, 21
 
   Side note: This is here just for the sake of completeness 🖖. It didn't find much traction when it was released and is certainly not relevant now.
