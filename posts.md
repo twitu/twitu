@@ -1,5 +1,7 @@
 ## All posts (newest first)
 
+* Developing an intuitive understanding of the **what? and how? of ffi** by [Building in Rust for Python 🔗](./tales-from-ffi.md). The write up is developed from [my presentation](https://docs.google.com/presentation/d/1Ww5mVbfU0FYbK1DWA6JE6zwVgzB5gw3zaNzk_HaH6xI/edit?usp=sharing) delivered at the [Rust India July Meetup](https://hasgeek.com/rustlangin/july-2023-rustacean-meetup/).
+
 * [Over engineering assignment checking](./over-engineering-assignment-checking.md) automates the chore of checking a python assignment that doesn't have a well defined spec. It explores aspects of python for running external python code - including library mocking and multi-processing.
 
 * [AWS DevOps Blog](https://aws.amazon.com/blogs/devops/integrating-with-aarogya-setu-open-api-on-aws-to-ensure-a-safe-workspace/) about building and deploying a serverless application that integrates with Aarogya Setu. - Apr, 21
