@@ -286,6 +286,10 @@ We covered the rules for inter-operating between two languages, where we specifi
 
 ---
 
+Read the next Rust FFI tale - [Python Pointer Panic](./tales-from-ffi-python-pointer-panic.md)
+
+---
+
 _The ideas in this post were originally [presented](https://docs.google.com/presentation/d/1Ww5mVbfU0FYbK1DWA6JE6zwVgzB5gw3zaNzk_HaH6xI/edit?usp=sharing) at the [Rust India July Meetup](https://hasgeek.com/rustlangin/july-2023-rustacean-meetup/)._
 
 [^1]: https://doc.rust-lang.org/nomicon/ffi.html#foreign-function-interface
