@@ -6,7 +6,9 @@
 
 ✍️ Occasionally, I **write about my projects or topics** I have explored to some depth. Below are two you may find interesting.
 
-* Developing an intuitive understanding of the **what? and how? of ffi** by [Building in Rust for Python 🔗](./tales-from-ffi.md).
+* Tales from Rust FFI
+  * Causing a **memory leak in Python** (and then fixing it) [Python Pointer Panic 🔗](./tales-from-ffi-python-pointer-panic.md)
+  * Developing an intuitive understanding of the **what? and how? of ffi** by [Building in Rust for Python 🔗](./tales-from-ffi.md).
 
 * A 3-part **series about graphics programming in Rust** where I simulate a 3d flock of boids
     * [Part 1 - A fistful of boids](./a-fistful-of-boids.md)

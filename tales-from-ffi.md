@@ -1,4 +1,4 @@
-# Building in Rust for Python 🦀 ❤️ 🐍
+# Tales from Rust FFI - Building in Rust for Python 🦀 ❤️ 🐍
 
 We will cover the following -
 * What is FFI?
