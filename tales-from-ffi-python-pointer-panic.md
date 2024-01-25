@@ -28,7 +28,7 @@ This is unexpected in Python because any reachable memory should be deallocated 
 A big challenge was the uncertainty around the where and when the leak was introduced. There was no  profiling memory until then. So after extensive git bisecting it was revealed that this commit[^2] which implemented the first rust core, about 600 commits from the HEAD, had introduced the bug.
 </details>
 
-## Root Cause Analysis (RCA)
+### Root Cause Analysis (RCA)
 
 Nautilus is a complex code base because it has three layers, Python, Cython and Rust. Parts of Cython are being ported to Rust, but they still have to co-exist for now. The most difficult part was isolating the bug from this complexity and reproducing it using a minimal example. Not only to understand it better, but also because the large build times on the full codebase made iteration very slow. There were some hints from the valgrind summary that the leak was possibly related to strings. After much experimentation and helpful discussion[^5], the bug was narrowed down to the minimum reproducible example[^3] explained below.
 
@@ -65,7 +65,7 @@ cdef class Data:
 
 BUTTT!! There’s a subtle bug here 🐛 🤯. Do you see it?? It’s this line `<str>data_to_pystr(&self._mem)`.
 
-The Rust function `data_to_pystr` creates a Python string object and converts it into a pointer. The reference count for that object is 1. This is needed because a valid object’s reference count should never be 0, as it can get garbage collected. For a similar reason, when Cython typecasts a raw pointer to an object it increments the reference count by one. Because a valid object should have reference count 1, and there are no guarantees about the reference count of a raw pointer. So after the offending line the reference count for the Python string object is 2, even though there is only one actual reference to it!! When the reference goes out of scope the reference count is decremented from 2 to 1. The GC cannot collect the memory thus leaking it.
+The Rust function `data_to_pystr` creates a Python string object and converts it into a pointer. The reference count for that object is 1. This is needed because a valid object’s reference count should never be 0, as it can get garbage collected. For a similar reason, when Cython typecasts a raw pointer to an object it increments the reference count by one. Because a valid object should have reference count 1, and there are no guarantees about the reference count of a raw pointer. So after the offending line the reference count for the Python string object is 2, even though there is only one actual reference to it!! When the reference goes out of scope the reference count is decremented from 2 to 1. The GC can only collect objects with 0 reference count,  thus the memory is leaked.
 
 ![Life cycle of a Python Pointer Panic](./img/tales-from-ffi/python-pointer-panic.png)
 > A Python object with 1 reference but 2 ref count
@@ -76,17 +76,21 @@ It’s a very subtle bug. An excellent example of complexity arising at the inte
 
 ### Fix and validation
 
-And, the fix was to simply add an explicitly reference count decrement after type casting it. Or to type cast it as a pointer.
+And, the fix was to simply add an explicitly reference count decrement[^6] after type casting it. This ensures that reference count is the same as the number of references.
 
 ```Cython
 cdef inline str pyobj_to_str(PyObject* ptr):
 	cdef PyObject* str_obj = ptr
 	cdef str str_value = <str> str_obj
 	Py_XDECREF(str_obj)
+    Py_XDECREF(ptr)
 	return str_value
 ```
 
-The difference was clear. Here’s the difference in memory before and after a run taken using tracemalloc. You can see that before the fix, around 4 MB of memory is still accessible after a full run. After the fix, only a few bytes of memory probably from the runtime and global objects is remaining.
+Or from the documentation to type cast it as a pointer.
+> Casting to cast(pointer(PyObject), ...) creates a borrowed reference, leaving the refcount unchanged.
+
+The difference was clear in memory snapshots taken before and after a run using tracemalloc. Before the fix, about 4 MB of memory is still accessible after a full run. After the fix, only a few bytes of memory probably from the runtime and global objects is remaining.
 
 ```
 [ Top 10 differences ]
@@ -110,3 +114,4 @@ Nautech Systems/nautilus_experiments/tests/test_objects.py:63: size=706 B (+706 
 [^3]: https://github.com/nautechsystems/nautilus_experiments/tree/4babdb7ce44a409876e0b5a134a3c9c3129543f4
 [^4]: https://cython.readthedocs.io/en/latest/src/userguide/language_basics.html#type-casting
 [^5]: https://github.com/PyO3/pyo3/discussions/2804
+[^6]: https://github.com/nautechsystems/nautilus_trader/commit/39c291d64da8c96ecf4f8f5c9dbc2a8e217e785d
