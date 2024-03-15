@@ -1,5 +1,7 @@
 ## All posts (newest first)
 
+* No code key ideas from [my MPhil Thesis 🔗](./my-mphil-thesis.md)
+
 * Identifying and fixing a memory leak bug when doing FFI between Rust and Python [Tales from FFI: Python Pointer Panic 🔗](./tales-from-ffi-python-pointer-panic.md).
 
 * Developing an intuitive understanding of the **what? and how? of ffi** by [Building in Rust for Python 🔗](./tales-from-ffi.md). The write up is developed from [my presentation](https://docs.google.com/presentation/d/1Ww5mVbfU0FYbK1DWA6JE6zwVgzB5gw3zaNzk_HaH6xI/edit?usp=sharing) delivered at the [Rust India July Meetup](https://hasgeek.com/rustlangin/july-2023-rustacean-meetup/).

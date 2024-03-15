@@ -6,6 +6,8 @@
 
 ✍️ Occasionally, I **write about my projects or topics** I have explored to some depth. Below are two you may find interesting.
 
+* No code key ideas from [my MPhil Thesis 🔗](./my-mphil-thesis.md)
+
 * Tales from Rust FFI
   * Causing a **memory leak in Python** (and then fixing it) [Python Pointer Panic 🔗](./tales-from-rust-ffi-python-pointer-panic.md)
   * Developing an intuitive understanding of the **what? and how? of ffi** by [Building in Rust for Python 🔗](./tales-from-ffi.md).
