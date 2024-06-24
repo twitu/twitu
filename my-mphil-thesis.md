@@ -70,6 +70,6 @@ HMloc cleverly encodes the sequence of steps related to a type within the type i
 
 These were the key ideas behind the HMloc type system removed from any of the programming specifics. You're welcome to dive into the gory details using the links below.
 
-* [Conference presentation video recording](https://www.youtube.com/watch?v=sDI9Ln4Ckao?start=25340)
+* [Conference presentation video recording](https://www.youtube.com/watch?v=sDI9Ln4Ckao&t=25340)
 * [Published report](https://dl.acm.org/doi/10.1145/3622812) and [Technical report](https://arxiv.org/abs/2402.12637) which has some extra details
 * [GitHub repo](https://github.com/hkust-taco/type-error-messages-paper)
