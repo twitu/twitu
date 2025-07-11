@@ -6,6 +6,11 @@
 
 ✍️ Occasionally, I **write about my projects or topics** I have explored to some depth. Below are two you may find interesting.
 
+* Some serious fun anecdotes from serious fun Rust projects
+  * [Flamegraphs for fun and profit](./flamegraphs-for-fun-and-profit.md)
+  * [Fixing frequent cargo rebuilds](./fixing-frequent-full-rust-builds-with-cargo-fingerprints.md)
+  * [Don't allocate memory on the hot path](./mighty-memory-vs-crafty-cpu-choosing-the-right-algo.md)
+
 * No code key ideas from [my MPhil Thesis 🔗](./my-mphil-thesis.md)
 
 * Tales from Rust FFI
